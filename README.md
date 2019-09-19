@@ -14,6 +14,9 @@ Augusto Ezequiel Andres
 Helps the user decide what resturant to eat at by randomizing from a list of choices. Then checks to see if Groupon has any deals for that resturant. 
 
 #### Stetch of Design
+![Website Sketch](https://github.com/Shtever/group-project/blob/master/assets/images/Group%20Project%20Sketch.jpg)
+
+
 
 ##### Apis to be Used
 
