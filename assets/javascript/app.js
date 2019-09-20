@@ -4,7 +4,7 @@
 
 // restaurant name
 // **** city/loacation
-var location = "Austin"
+var location = "austin"
 // hours
 // **** cuisine type
 var cuisineType = "" 
@@ -17,3 +17,10 @@ var mealType = ""
 // featured tags
 
 var queryUrl = "https://developers.zomato.com/api/v2.1/cities?q=" + location + "&apikey=9de42e8f38d437b717a205e52e647b2f"
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function (response) {
+    console.log(response);
+})
