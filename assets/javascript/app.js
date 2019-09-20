@@ -15,7 +15,7 @@ $.ajax({
 
     // declare var queryURL to include lat/long results from above AJAX call
     // var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCrdiVhj7Un_ACNVqMw9dozHxGNVglpwmo";
-    var queryURL2 = "https://developers.zomato.com/api/v2.1/geocode?&lat=" + lat + "&lon=" + long + "establishment_type=161&apikey=9de42e8f38d437b717a205e52e647b2f"
+    var queryURL2 = "https://developers.zomato.com/api/v2.1/geocode?&lat=" + lat + "&lon=" + long + "&apikey=9de42e8f38d437b717a205e52e647b2f"
 
     $.ajax({
         url: queryURL2,
