@@ -1,5 +1,5 @@
 # Project Title
-Resturant Chooser: I don't know!
+Resturant Chooser: "I don't know!"
 
 Deployed at: https://shtever.github.io/group-project/
 
