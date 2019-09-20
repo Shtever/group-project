@@ -1,34 +1,26 @@
-
-// var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=2405+Robert+Dedman+Dr&key=AIzaSyDj2CsSJ_HaADu_VP_2Q66zI34V9hYh5EI";
-var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=Austin,_TX&apikey=9de42e8f38d437b717a205e52e647b2f"
+var queryURL = "https://api.ipdata.co?api-key=f754718a6a805ba8f15448bac5bf5e48e82b8c6b7b923fe91c9381eb"
 
 
+// Ajax call for lat/long based on user IP address //
 $.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function(response) {
-  console.log(response);
+    url: queryURL,
+    method: "GET"
+}).then(function (response) {
+    var lat = response.latitude
+    var long = response.longitude
+    console.log(response);
+    console.log("Latitude: " + response.latitude);
+    console.log("Longitude: " +response.longitude);
+
+    // declare var queryURL to include lat/long results from above AJAX call
+    var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCrdiVhj7Un_ACNVqMw9dozHxGNVglpwmo";
+    $.ajax({
+        url: queryURL2,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+    });
 });
-  
 
 
 
-
-//
-// var queryUrl = "https://developers.zomato.com/api/v2.1/cities?q=Austin&apikey=9de42e8f38d437b717a205e52e647b2f"
-// //==========================================zomatoAPI==================================//
-// // restaurant name
-// // **** city/loacation
-// var location = "austin"
-// // hours
-// // **** cuisine type
-// var cuisineType = "" 
-// // **** price range 
-// var price = ""
-// // **** meal type (breakfast/lunch/dinner)
-// var mealType = ""
-// // view menu
-// // review score
-// // featured tags
-// var queryUrl = "https://developers.zomato.com/api/v2.1/cities?q=" + location + "&apikey=9de42e8f38d437b717a205e52e647b2f"
-// //==========================================zomatoAPI==================================//
