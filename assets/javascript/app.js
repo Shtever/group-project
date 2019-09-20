@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //
 // https://developers.zomato.com/api/v2.1/cities?q=Austin&apikey=9de42e8f38d437b717a205e52e647b2f
 // //==========================================zomatoAPI==================================//
@@ -28,3 +29,19 @@ $.ajax({
 }).then(function (response) {
     console.log(response);
 })
+=======
+
+
+
+
+var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=2405+Robert+Dedman+Dr&key=AIzaSyDj2CsSJ_HaADu_VP_2Q66zI34V9hYh5EI";
+
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(response) {
+  console.log(response);
+});
+  
+>>>>>>> master
