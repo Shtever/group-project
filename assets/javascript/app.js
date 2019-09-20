@@ -2,7 +2,6 @@ var queryURL = "https://api.ipdata.co?api-key=f754718a6a805ba8f15448bac5bf5e48e8
 
 
 var queryURL2 ="https://maps.googleapis.com/maps/api/geocode/json?address=2405+Robert+Dedman+Dr&key=AIzaSyDj2CsSJ_HaADu_VP_2Q66zI34V9hYh5EI";
-=======
 // Ajax call for lat/long based on user IP address //
 $.ajax({
     url: queryURL,
