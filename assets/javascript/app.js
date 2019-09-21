@@ -1,6 +1,6 @@
+$(document).ready(function () {
+
 var queryURL = "https://api.ipdata.co?api-key=f754718a6a805ba8f15448bac5bf5e48e82b8c6b7b923fe91c9381eb"
-
-
 var queryURL2 ="https://maps.googleapis.com/maps/api/geocode/json?address=2405+Robert+Dedman+Dr&key=AIzaSyDj2CsSJ_HaADu_VP_2Q66zI34V9hYh5EI";
 // Ajax call for lat/long based on user IP address //
 $.ajax({
@@ -23,6 +23,30 @@ $.ajax({
         method: "GET"
     }).then(function (response) {
         console.log("Zomato Restaurant API - To Generate a list of nearby restaurants based on lat/long generated above:");
-        console.log(response)
-    });
+        console.log(response);
+        ///// Declared Variables for info to be displayed on page and push to Array
+        
+        var placeName = response.nearby_restaurants[0].restaurant.name;
+        var placeImage = response.nearby_restaurants[0].restaurant.photos_url;
+        var placeAddress = response.nearby_restaurants[0].restaurant.location.address;
+        var placeCost = response.nearby_restaurants[0].restaurant.average_cost_for_two;
+        
+        $(".placeInfo").text(placeName);
+       
+        
+        // console.log(placeName);
+        // console.log(placeImage);
+        // console.log(placeAddress);
+        // console.log(placeCost);
+        
+        });
+        
+        
+
+
+       
+
+    
+
+});
 });
