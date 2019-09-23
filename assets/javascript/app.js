@@ -68,7 +68,7 @@ $(document).ready(function () {
                 function createCard(){
 
                     var cardDiv = $("<div class='card'>");
-                    var cardImg = $("<img class='card-img-top'>");
+                    var cardImg = $("<img class='card-img-top cardImg'>");
                     var cardBody = $("<div class= 'card-body'>");
                     var cardTitle = $("<h4 class= 'card-title'>");
                     var cardText = $("<h5 class='card-text'>");
@@ -91,11 +91,38 @@ $(document).ready(function () {
                     $(cardInfo).text(randArray.type);
                     
                     }
+
+                    function createCard2(){
+
+                        var cardDiv = $("<div class='card'>");
+                        var cardImg = $("<img class='card-img-top'>");
+                        var cardBody = $("<div class= 'card-body'>");
+                        var cardTitle = $("<h4 class= 'card-title'>");
+                        var cardText = $("<h5 class='card-text'>");
+                        var cardList = $("<ul class= 'list-group list-group-flush'>");
+                        var cardInfo = $("<li class= 'list-group-item'>");
+                        
+                        $(".card-group").append(cardDiv);
+                        $(cardDiv).append(cardBody);
+                        $(cardDiv).append(cardTitle);
+                        $(cardDiv).append(cardImg);
+                        $(cardDiv).append(cardList);
+                        $(cardList).append(cardInfo);
+                        $(cardDiv).append(cardText);
+                        
+                        
+                        
+                        $(cardImg).attr("src", randArray2.image);
+                        $(cardTitle).text(randArray2.name);
+                        $(cardText).text(randArray2.address);
+                        $(cardInfo).text(randArray2.type);
+                        
+                        }
                     
                     
                      
                     createCard();
-                    createCard();
+                    createCard2();
             }
         });
     });
