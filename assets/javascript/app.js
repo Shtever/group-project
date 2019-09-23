@@ -5,7 +5,6 @@ console.log(placeArray);
 
 $(document).ready(function () {
     var queryURL = "https://api.ipdata.co?api-key=f754718a6a805ba8f15448bac5bf5e48e82b8c6b7b923fe91c9381eb"
-    var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?address=2405+Robert+Dedman+Dr&key=AIzaSyDj2CsSJ_HaADu_VP_2Q66zI34V9hYh5EI";
     // Ajax call for lat/long based on user IP address //
     $.ajax({
         url: queryURL,
@@ -20,7 +19,7 @@ $(document).ready(function () {
 
         // declare var queryURL to include lat/long results from above AJAX call
         // var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCrdiVhj7Un_ACNVqMw9dozHxGNVglpwmo";
-        var queryURL2 = "https://developers.zomato.com/api/v2.1/geocode?&lat=" + lat + "&lon=" + long + "&apikey=9de42e8f38d437b717a205e52e647b2f"
+        var queryURL2 = "https://developers.zomato.com/api/v2.1/geocode?&lat=" + lat + "&lon=" + long + "&count=20&apikey=9de42e8f38d437b717a205e52e647b2f"
 
         $.ajax({
             url: queryURL2,
@@ -59,11 +58,11 @@ $(document).ready(function () {
 
                 //add random restaurant to page 
 
-                $(".placeName").text(randArray.name);
-                $(".placeAddress").text(randArray.address);
+                // $(".placeName").text(randArray.name);
+                // $(".placeAddress").text(randArray.address);
 
-                $(".placeName2").text(randArray2.name);
-                $(".placeAddress2").text(randArray2.address);
+                // $(".placeName2").text(randArray2.name);
+                // $(".placeAddress2").text(randArray2.address);
                 // create cards
                 function createCard(){
 
@@ -93,6 +92,19 @@ $(document).ready(function () {
                     }
 
                     function createCard2(){
+                        if(randArray === randArray2){
+                            console.log("REROLL")
+                            randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
+                            console.log(randArray2);
+                        
+                            // For future deployment, prepend card rather than replace text.
+                        } else {
+                            $(".placeName").text(randArray.name);
+                            $(".placeAddress").text(randArray.address);
+                        
+                            $(".placeName2").text(randArray2.name);
+                            $(".placeAddress2").text(randArray2.address);
+                        }
 
                         var cardDiv = $("<div class='card'>");
                         var cardImg = $("<img class='card-img-top'>");
@@ -123,16 +135,19 @@ $(document).ready(function () {
                      
                     createCard();
                     createCard2();
-            }
+
+                   
+                    $(".btn").click(function(){
+                     $(".card-group").empty();
+                  start();
+                    });
+                }
         });
     });
 });
 
 //function to populate more choices when button is clicked//
-$(".btn").click(function(){
-    event.preventDefault();
-    moreChoices();
-});
+
 
 function moreChoices() {
     console.log("Button Clicked!");
@@ -144,19 +159,7 @@ function moreChoices() {
 
 
 
-    if(randArray === randArray2){
-        console.log("REROLL")
-        randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-        console.log(randArray2);
-    
-        // For suture deployment, prepend card rather than replace text.
-    } else {
-        $(".placeName").text(randArray.name);
-        $(".placeAddress").text(randArray.address);
-    
-        $(".placeName2").text(randArray2.name);
-        $(".placeAddress2").text(randArray2.address);
-    }
+
 
     
 
