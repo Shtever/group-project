@@ -18,25 +18,20 @@ body {
     background-size: cover;
 }
 
-h2 {
-	height: 50px;
-	width: 100%;
-	line-height: 50px;
-	background-color: black;
-    margin: 10px 0px 20px 0px;
-    opacity: 0.9;
+.jumbotron {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.85);
 }
 
-nav {
-	height: 50px;
-	width: 100%;
-	line-height: 50px;
-	background-color: black;
-    margin-bottom: 20px;
-    opacity: 0.9;
+.btn.btn-primary.btn-lg {
+	color: black;
 }
 
 .container {
+
+	color: black;
+}
+
 	margin: 10px 0px, 10px, 0px;
 	position: relative;
 }
@@ -76,4 +71,5 @@ button {
     color: cyan;
     opacity: 0.9;
 }
+
 
