@@ -38,12 +38,11 @@ $(document).ready(function () {
 
                 var placeObject = {
                     name: response.nearby_restaurants[i].restaurant.name,
-                    image: response.nearby_restaurants[i].restaurant.photos_url,
+                    image: response.nearby_restaurants[i].restaurant.thumb,
                     address: response.nearby_restaurants[i].restaurant.location.address,
-                    cost: response.nearby_restaurants[i].restaurant.average_cost_for_two
+                    cost: response.nearby_restaurants[i].restaurant.average_cost_for_two,
+                    type: response.nearby_restaurants[i].restaurant.cuisines,
                 };
-
-
                 placeArray.push(placeObject);
 
             }
