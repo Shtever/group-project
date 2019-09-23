@@ -32,44 +32,4 @@ body {
 	color: black;
 }
 
-	margin: 10px 0px, 10px, 0px;
-	position: relative;
-}
-
-section {
-	background-color: black;
-	height: 280px;
-    width: 495px;
-    position: relative;
-    right: 15px;
-	margin-right: 10px;
-    padding-top: 10px;
-    opacity: 0.9;
-}
-
-aside {
-	padding: 10px;
-	background-color: black;
-	height: 280px;
-	width: 445px;
-	float: right;
-	position: absolute;
-	right: 0px;
-    top: 0px;
-    opacity: 0.9;
-}
-
-button {
-	height: 50px;
-	width: 100%;
-	line-height: 50px;
-	position: relative;
-	bottom: 0;
-	left: 0;
-	background-color: black;
-    margin-top: 20px;
-    color: cyan;
-    opacity: 0.9;
-}
-
 
