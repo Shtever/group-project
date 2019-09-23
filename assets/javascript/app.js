@@ -56,7 +56,7 @@ $(document).ready(function () {
                 console.log(randArray)
 
                 var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-                console.log(randArray)
+                console.log(randArray2)
 
                 //add random restaurant to page 
 
@@ -72,20 +72,33 @@ $(document).ready(function () {
 
 //function to populate more choices when button is clicked//
 $("#button").click(function(){
+    event.preventDefault();
     moreChoices();
 });
 
 function moreChoices() {
-    alert("Button Clicked!");
+    console.log("Button Clicked!");
     var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
     console.log(randArray);
 
     var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-    console.log(randArray);
+    console.log(randArray2);
 
-    $(".placeName").prepend(randArray.name);
-    $(".placeAddress").prepend(randArray.address);
 
-    $(".placeName2").prepend(randArray2.name);
-    $(".placeAddress2").prepend(randArray2.address);
+
+    if(randArray === randArray2){
+        console.log("REROLL")
+        randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
+        console.log(randArray2);
+    
+        // For suture deployment, prepend card rather than replace text.
+    } else {
+        $(".placeName").text(randArray.name);
+        $(".placeAddress").text(randArray.address);
+    
+        $(".placeName2").text(randArray2.name);
+        $(".placeAddress2").text(randArray2.address);
+    }
+
+
 }
