@@ -88,7 +88,7 @@ $(document).ready(function () {
                     $(cardImg).attr("src", randArray.image);
                     $(cardTitle).text(randArray.name);
                     $(cardText).text(randArray.address);
-                    $(cardInfo).text(randArray.type);
+                    $(cardInfo).text("Type: " + randArray.type);
                     
                     }
 
@@ -115,7 +115,7 @@ $(document).ready(function () {
                         $(cardImg).attr("src", randArray2.image);
                         $(cardTitle).text(randArray2.name);
                         $(cardText).text(randArray2.address);
-                        $(cardInfo).text(randArray2.type);
+                        $(cardInfo).text("Type: "+ randArray2.type);
                         
                         }
                     
