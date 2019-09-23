@@ -47,22 +47,45 @@ $(document).ready(function () {
                 placeArray.push(placeObject);
 
             }
+            start()
+
+
             //select the random array
-            var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
-            console.log(randArray)
+            function start() {
+                var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
+                console.log(randArray)
 
-            var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-            console.log(randArray)
+                var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
+                console.log(randArray)
 
-            //add random restaurant to page 
+                //add random restaurant to page 
 
-            $(".placeName").text(randArray.name);
-            $(".placeAddress").text(randArray.address);
+                $(".placeName").text(randArray.name);
+                $(".placeAddress").text(randArray.address);
 
-            $(".placeName2").text(randArray2.name);
-            $(".placeAddress2").text(randArray2.address);
+                $(".placeName2").text(randArray2.name);
+                $(".placeAddress2").text(randArray2.address);
+            }
         });
-
-
     });
 });
+
+//function to populate more choices when button is clicked//
+$("#button").click(function(){
+    moreChoices();
+});
+
+function moreChoices() {
+    alert("Button Clicked!");
+    var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
+    console.log(randArray);
+
+    var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
+    console.log(randArray);
+
+    $(".placeName").prepend(randArray.name);
+    $(".placeAddress").prepend(randArray.address);
+
+    $(".placeName2").prepend(randArray2.name);
+    $(".placeAddress2").prepend(randArray2.address);
+}
