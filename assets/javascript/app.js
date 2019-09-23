@@ -129,7 +129,7 @@ $(document).ready(function () {
 });
 
 //function to populate more choices when button is clicked//
-$("#button").click(function(){
+$(".btn").click(function(){
     event.preventDefault();
     moreChoices();
 });
