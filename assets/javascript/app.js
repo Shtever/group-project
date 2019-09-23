@@ -64,6 +64,65 @@ $(document).ready(function () {
 
                 $(".placeName2").text(randArray2.name);
                 $(".placeAddress2").text(randArray2.address);
+                // create cards
+                function createCard(){
+
+                    var cardDiv = $("<div class='card'>");
+                    var cardImg = $("<img class='card-img-top cardImg'>");
+                    var cardBody = $("<div class= 'card-body'>");
+                    var cardTitle = $("<h4 class= 'card-title'>");
+                    var cardText = $("<h5 class='card-text'>");
+                    var cardList = $("<ul class= 'list-group list-group-flush'>");
+                    var cardInfo = $("<li class= 'list-group-item'>");
+                    
+                    $(".card-group").append(cardDiv);
+                    $(cardDiv).append(cardBody);
+                    $(cardDiv).append(cardTitle);
+                    $(cardDiv).append(cardImg);
+                    $(cardDiv).append(cardList);
+                    $(cardList).append(cardInfo);
+                    $(cardDiv).append(cardText);
+                    
+                    
+                    
+                    $(cardImg).attr("src", randArray.image);
+                    $(cardTitle).text(randArray.name);
+                    $(cardText).text(randArray.address);
+                    $(cardInfo).text(randArray.type);
+                    
+                    }
+
+                    function createCard2(){
+
+                        var cardDiv = $("<div class='card'>");
+                        var cardImg = $("<img class='card-img-top'>");
+                        var cardBody = $("<div class= 'card-body'>");
+                        var cardTitle = $("<h4 class= 'card-title'>");
+                        var cardText = $("<h5 class='card-text'>");
+                        var cardList = $("<ul class= 'list-group list-group-flush'>");
+                        var cardInfo = $("<li class= 'list-group-item'>");
+                        
+                        $(".card-group").append(cardDiv);
+                        $(cardDiv).append(cardBody);
+                        $(cardDiv).append(cardTitle);
+                        $(cardDiv).append(cardImg);
+                        $(cardDiv).append(cardList);
+                        $(cardList).append(cardInfo);
+                        $(cardDiv).append(cardText);
+                        
+                        
+                        
+                        $(cardImg).attr("src", randArray2.image);
+                        $(cardTitle).text(randArray2.name);
+                        $(cardText).text(randArray2.address);
+                        $(cardInfo).text(randArray2.type);
+                        
+                        }
+                    
+                    
+                     
+                    createCard();
+                    createCard2();
             }
         });
     });
@@ -99,5 +158,7 @@ function moreChoices() {
         $(".placeAddress2").text(randArray2.address);
     }
 
+    
 
 }
+
