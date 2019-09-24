@@ -127,11 +127,15 @@ $(document).ready(function () {
                 createCard();
                 createCard2();
 
-
+                var clicks = 0;
                 $(".btn").click(function (event) {
                     event.preventDefault();
                     $(".card-group").empty();
                     start();
+
+                if (clicks % 3) {
+                    $("myModal");
+                }
                 });
             }
         });
