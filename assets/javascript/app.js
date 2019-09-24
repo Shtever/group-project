@@ -29,8 +29,6 @@ $(document).ready(function () {
 
 
             // Displays restaurants on page
-
-
             for (var i = 0; i < response.restaurants.length; i++) {
 
                 var placeObject = {
@@ -51,10 +49,10 @@ $(document).ready(function () {
             function start() {
                 var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
                 var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-                
+
                 createCard();
                 createCard2();
-                console.log(randArray.name,  "/", randArray2.name);
+                console.log(randArray.name, "/", randArray2.name);
 
                 // create cards
                 function createCard() {
@@ -127,21 +125,15 @@ $(document).ready(function () {
     });
 });
 
+
+
+
+
 //function to populate more choices when button is clicked//
-
-
 // function moreChoices() {
 //     console.log("Button Clicked!");
 //     var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
 //     console.log(randArray[i]);
-
 //     var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
 //     console.log(randArray2[i]);
-
-
-
-
-
-
-
 // }
