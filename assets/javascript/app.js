@@ -18,8 +18,8 @@ $(document).ready(function () {
 
         // declare var queryURL to include lat/long results from above AJAX call
         // var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCrdiVhj7Un_ACNVqMw9dozHxGNVglpwmo";
-        var queryURL2 = "https://developers.zomato.com/api/v2.1/geocode?&lat=" + lat + "&lon=" + long + "&count=20&apikey=9de42e8f38d437b717a205e52e647b2f"
-
+        // var queryURL2 = "https://developers.zomato.com/api/v2.1/geocode?&lat=" + lat + "&lon=" + long + "&count=20&apikey=9de42e8f38d437b717a205e52e647b2f"
+        var queryURL2 = "https://developers.zomato.com/api/v2.1/search?count=20&lat=" + lat + "&lon=" + long + "&apikey=9de42e8f38d437b717a205e52e647b2f"
         $.ajax({
             url: queryURL2,
             method: "GET"
@@ -31,17 +31,17 @@ $(document).ready(function () {
             // Displays restaurants on page
 
 
-            for (var i = 0; i < response.nearby_restaurants.length; i++) {
+            for (var i = 0; i < response.restaurants.length; i++) {
 
 
                 var placeObject = {
-                    name: response.nearby_restaurants[i].restaurant.name,
-                    image: response.nearby_restaurants[i].restaurant.thumb,
-                    address: response.nearby_restaurants[i].restaurant.location.address,
-                    cost: response.nearby_restaurants[i].restaurant.average_cost_for_two,
-                    type: response.nearby_restaurants[i].restaurant.cuisines,
-                    rating: response.nearby_restaurants[i].restaurant.user_rating.aggregate_rating,
-                    cost: response.nearby_restaurants[i].restaurant.average_cost_for_two
+                    name: response.restaurants[i].restaurant.name,
+                    image: response.restaurants[i].restaurant.thumb,
+                    address: response.restaurants[i].restaurant.location.address,
+                    cost: response.restaurants[i].restaurant.average_cost_for_two,
+                    type: response.restaurants[i].restaurant.cuisines,
+                    rating: response.restaurants[i].restaurant.user_rating.aggregate_rating,
+                    cost: response.restaurants[i].restaurant.average_cost_for_two
                 };
                 placeArray.push(placeObject);
 
