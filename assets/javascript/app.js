@@ -41,6 +41,8 @@ $(document).ready(function () {
                     address: response.nearby_restaurants[i].restaurant.location.address,
                     cost: response.nearby_restaurants[i].restaurant.average_cost_for_two,
                     type: response.nearby_restaurants[i].restaurant.cuisines,
+                    rating: response.nearby_restaurants[i].restaurant.user_rating.aggregate_rating,
+                    cost: response.nearby_restaurants[i].restaurant.average_cost_for_two
                 };
                 placeArray.push(placeObject);
 
@@ -82,6 +84,8 @@ $(document).ready(function () {
                     $(cardText).text(randArray.address);
                     $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
                     $(cardInfo).text("Type: " + randArray.type);
+                    $(cardInfo).append("<br>Rating: " + randArray.rating + "/5");
+                    $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
 
                 }
 
@@ -116,17 +120,16 @@ $(document).ready(function () {
                         $(cardText).text(randArray2.address);
                         $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
                         $(cardInfo).text("Type: " + randArray2.type);
+                        $(cardInfo).append("<br>Rating: " + randArray.rating + "/5");
+                        $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
                     }
 
                     ;
 
                 }
 
-
-
                 createCard();
                 createCard2();
-
 
                 $(".btn").click(function (event) {
                     event.preventDefault();
