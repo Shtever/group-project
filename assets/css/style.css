@@ -43,3 +43,8 @@ body {
 	width: 500px;
 	height: auto;
 }
+
+.card-text {
+	font-size: 12px;
+	color: black;
+}
