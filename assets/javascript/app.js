@@ -56,15 +56,8 @@ $(document).ready(function () {
                 var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
                 console.log(randArray2)
 
-                //add random restaurant to page 
-
-                // $(".placeName").text(randArray.name);
-                // $(".placeAddress").text(randArray.address);
-
-                // $(".placeName2").text(randArray2.name);
-                // $(".placeAddress2").text(randArray2.address);
                 // create cards
-                function createCard(){
+                function createCard() {
 
                     var cardDiv = $("<div class='card'>");
                     var cardImg = $("<img class='card-img-top cardImg'>");
@@ -73,7 +66,7 @@ $(document).ready(function () {
                     var cardText = $("<a class='card-text' target='_blank'>");
                     var cardList = $("<ul class= 'list-group list-group-flush'>");
                     var cardInfo = $("<li class= 'list-group-item'>");
-                    
+
                     $(".card-group").append(cardDiv);
                     $(cardDiv).append(cardBody);
                     $(cardDiv).append(cardTitle);
@@ -81,32 +74,25 @@ $(document).ready(function () {
                     $(cardDiv).append(cardList);
                     $(cardList).append(cardInfo);
                     $(cardDiv).append(cardText);
-                    
-                    
-                    
+
+
+
                     $(cardImg).attr("src", randArray.image);
                     $(cardTitle).text(randArray.name);
                     $(cardText).text(randArray.address);
                     $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
                     $(cardInfo).text("Type: " + randArray.type);
-                    
-                    }
 
-                    function createCard2(){
-                        if(randArray === randArray2){
-                            console.log("REROLL")
-                            randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-                            console.log(randArray2);
-                        
-                            // For future deployment, prepend card rather than replace text.
-                        } else {
-                            $(".placeName").text(randArray.name);
-                            $(".placeAddress").text(randArray.address);
-                        
-                            $(".placeName2").text(randArray2.name);
-                            $(".placeAddress2").text(randArray2.address);
-                        }
+                }
 
+                function createCard2() {
+                    if (randArray === randArray2) {
+                        console.log("REROLL")
+                        randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
+                        console.log(randArray2);
+
+                        // For future deployment, prepend card rather than replace text.
+                    } else {
                         var cardDiv = $("<div class='card'>");
                         var cardImg = $("<img class='card-img-top'>");
                         var cardBody = $("<div class= 'card-body'>");
@@ -114,7 +100,7 @@ $(document).ready(function () {
                         var cardText = $("<a class='card-text' target='_blank'>");
                         var cardList = $("<ul class= 'list-group list-group-flush'>");
                         var cardInfo = $("<li class= 'list-group-item'>");
-                        
+
                         $(".card-group").append(cardDiv);
                         $(cardDiv).append(cardBody);
                         $(cardDiv).append(cardTitle);
@@ -122,28 +108,32 @@ $(document).ready(function () {
                         $(cardDiv).append(cardList);
                         $(cardList).append(cardInfo);
                         $(cardDiv).append(cardText);
-                        
-                        
-                        
+
+
+
                         $(cardImg).attr("src", randArray2.image);
                         $(cardTitle).text(randArray2.name);
                         $(cardText).text(randArray2.address);
                         $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
-                        $(cardInfo).text("Type: "+ randArray2.type);
-                        
-                        }
-                    
-                    
-                     
-                    createCard();
-                    createCard2();
+                        $(cardInfo).text("Type: " + randArray2.type);
+                    }
 
-                   
-                    $(".btn").click(function(){
-                     $(".card-group").empty();
-                  start();
-                    });
+                    ;
+
                 }
+
+
+
+                createCard();
+                createCard2();
+
+
+                $(".btn").click(function (event) {
+                    event.preventDefault();
+                    $(".card-group").empty();
+                    start();
+                });
+            }
         });
     });
 });
@@ -163,7 +153,6 @@ function moreChoices() {
 
 
 
-    
+
 
 }
-
