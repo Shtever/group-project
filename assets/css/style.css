@@ -38,3 +38,8 @@ body {
     width: 75%;
     margin: 0 auto;
 }
+
+.animated-gif {
+	width: 500px;
+	height: auto;
+}
