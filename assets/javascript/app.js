@@ -33,7 +33,6 @@ $(document).ready(function () {
 
             for (var i = 0; i < response.restaurants.length; i++) {
 
-
                 var placeObject = {
                     name: response.restaurants[i].restaurant.name,
                     image: response.restaurants[i].restaurant.thumb,
@@ -44,7 +43,6 @@ $(document).ready(function () {
                     cost: response.restaurants[i].restaurant.average_cost_for_two
                 };
                 placeArray.push(placeObject);
-
             }
             start()
 
@@ -52,10 +50,11 @@ $(document).ready(function () {
             //select the random array
             function start() {
                 var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
-                console.log(randArray)
-
                 var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-                console.log(randArray2)
+                
+                createCard();
+                createCard2();
+                console.log(randArray.name,  "/", randArray2.name);
 
                 // create cards
                 function createCard() {
@@ -76,8 +75,6 @@ $(document).ready(function () {
                     $(cardList).append(cardInfo);
                     $(cardDiv).append(cardText);
 
-
-
                     $(cardImg).attr("src", randArray.image);
                     $(cardTitle).text(randArray.name);
                     $(cardText).text(randArray.address);
@@ -85,14 +82,13 @@ $(document).ready(function () {
                     $(cardInfo).text("Type: " + randArray.type);
                     $(cardInfo).append("<br>Rating: " + randArray.rating + "/5");
                     $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
-
-                }
+                };
 
                 function createCard2() {
                     if (randArray === randArray2) {
                         console.log("REROLL")
                         randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-                        console.log(randArray2);
+                        createCard2();
 
                         // For future deployment, prepend card rather than replace text.
                     } else {
@@ -112,8 +108,6 @@ $(document).ready(function () {
                         $(cardList).append(cardInfo);
                         $(cardDiv).append(cardText);
 
-
-
                         $(cardImg).attr("src", randArray2.image);
                         $(cardTitle).text(randArray2.name);
                         $(cardText).text(randArray2.address);
@@ -121,21 +115,14 @@ $(document).ready(function () {
                         $(cardInfo).text("Type: " + randArray2.type);
                         $(cardInfo).append("<br>Rating: " + randArray.rating + "/5");
                         $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
-                    }
-
-                    ;
-
-                }
-
-                createCard();
-                createCard2();
-
-                $(".btn").click(function (event) {
-                    event.preventDefault();
-                    $(".card-group").empty();
-                    start();
-                });
+                    };
+                };
             }
+            $(".btn").click(function (event) {
+                event.preventDefault();
+                $(".card-group").empty();
+                start();
+            });
         });
     });
 });
@@ -143,18 +130,18 @@ $(document).ready(function () {
 //function to populate more choices when button is clicked//
 
 
-function moreChoices() {
-    console.log("Button Clicked!");
-    var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
-    console.log(randArray);
+// function moreChoices() {
+//     console.log("Button Clicked!");
+//     var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
+//     console.log(randArray[i]);
 
-    var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-    console.log(randArray2);
-
-
+//     var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
+//     console.log(randArray2[i]);
 
 
 
 
 
-}
+
+
+// }
