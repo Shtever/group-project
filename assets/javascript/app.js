@@ -70,7 +70,7 @@ $(document).ready(function () {
                     var cardImg = $("<img class='card-img-top cardImg'>");
                     var cardBody = $("<div class= 'card-body'>");
                     var cardTitle = $("<h4 class= 'card-title'>");
-                    var cardText = $("<h5 class='card-text'>");
+                    var cardText = $("<a class='card-text' target='_blank'>");
                     var cardList = $("<ul class= 'list-group list-group-flush'>");
                     var cardInfo = $("<li class= 'list-group-item'>");
                     
@@ -87,6 +87,7 @@ $(document).ready(function () {
                     $(cardImg).attr("src", randArray.image);
                     $(cardTitle).text(randArray.name);
                     $(cardText).text(randArray.address);
+                    $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
                     $(cardInfo).text("Type: " + randArray.type);
                     
                     }
@@ -110,7 +111,7 @@ $(document).ready(function () {
                         var cardImg = $("<img class='card-img-top'>");
                         var cardBody = $("<div class= 'card-body'>");
                         var cardTitle = $("<h4 class= 'card-title'>");
-                        var cardText = $("<h5 class='card-text'>");
+                        var cardText = $("<a class='card-text' target='_blank'>");
                         var cardList = $("<ul class= 'list-group list-group-flush'>");
                         var cardInfo = $("<li class= 'list-group-item'>");
                         
@@ -127,6 +128,7 @@ $(document).ready(function () {
                         $(cardImg).attr("src", randArray2.image);
                         $(cardTitle).text(randArray2.name);
                         $(cardText).text(randArray2.address);
+                        $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
                         $(cardInfo).text("Type: "+ randArray2.type);
                         
                         }
