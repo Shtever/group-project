@@ -13,7 +13,6 @@ $(document).ready(function () {
         var lat = response.latitude
         var long = response.longitude
         console.log("IP Data API - To Generate Lat/Long from user IP:");
-        console.log(response);
         console.log("Latitude: " + response.latitude);
         console.log("Longitude: " + response.longitude);
 
