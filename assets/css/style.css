@@ -51,6 +51,7 @@ body {
 	height: auto;
 }
 
+
 .card-text.button {
 	margin-bottom: 5px;
 }
@@ -97,4 +98,8 @@ body {
 .card {
 	background-color: transparent;
 	color: white;
+}
+
+#myModal {
+	display: none;
 }
