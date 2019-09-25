@@ -39,10 +39,6 @@ body {
 	margin:auto;
 }
 
-.card-body{
-	padding: .2rem;
-}
-
 .card-img-top {
     height: 75%;
     width: 75%;
@@ -54,34 +50,33 @@ body {
 	height: auto;
 }
 
+.card-text.button {
+	margin-bottom: 5px;
+}
+
 .button {
-	border-top: 1px solid #359cd4;
-	background: #71a7ed;
-	background: -webkit-gradient(linear, left top, left bottom, from(#1181eb), to(#71a7ed));
-	background: -webkit-linear-gradient(top, #1181eb, #71a7ed);
-	background: -moz-linear-gradient(top, #1181eb, #71a7ed);
-	background: -ms-linear-gradient(top, #1181eb, #71a7ed);
-	background: -o-linear-gradient(top, #1181eb, #71a7ed);
-	padding: 6px 12px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-	box-shadow: rgba(0,0,0,1) 0 1px 0;
-	text-shadow: rgba(0,0,0,.4) 0 1px 0;
-	color: #0a010a;
-	font-size: 14px;
-	font-family: Georgia, Serif;
-	text-decoration: none;
-	vertical-align: middle;
+	background: silver;
+	padding: 10px;
+	color: black;
+	font-size: 16px;
+	font-family: 'Righteous', cursive;
+	width: 50%;
+	margin: 0 auto;
+	display: block;
 	}
+
 .button:hover {
-	border-top-color: #28597a;
-	background: #28597a;
-	color: #ccc;
+	border-top-color: grey;
+	background: grey;
+	color:white;
 	}
+
+.list-group-item {
+	border: none;
+}
+
 .button:active {
-	border-top-color: #1b435e;
-	background: #1b435e;
+	border-top-color: grey;
+	background: grey;
+	color: white;
 	}
