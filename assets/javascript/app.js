@@ -1,4 +1,5 @@
 var placeArray = [];
+var count = 0;
 
 console.log(placeArray);
 
@@ -49,7 +50,6 @@ $(document).ready(function () {
             function start() {
                 var randArray = placeArray[Math.floor(Math.random() * placeArray.length)];
                 var randArray2 = placeArray[Math.floor(Math.random() * placeArray.length)];
-
                 createCard();
                 createCard2();
                 console.log(randArray.name, "/", randArray2.name);
@@ -115,16 +115,60 @@ $(document).ready(function () {
                         $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
                     };
                 };
+
             }
             $(".btn").click(function (event) {
                 event.preventDefault();
                 $(".card-group").empty();
+                count++;
+                console.log(count);
+                $(".btn").click(function () {
+                    if (count < 3) {
+                    } else {
+                        count = 0;
+                        modalShow();
+                    }
+                });
+
+
+
+
                 start();
             });
+            function modalShow() {
+                console.log("modal");
+
+                var modalID = $("<div id='myModal' class ='modal fade'>")
+                var modalDiv = $("<div class='modal-dialog'>");
+                var modalDiv2 = $("<div class='modal-content'>");
+                var modalDiv3 = $("<div class='modal-body'>");
+                var modalButton = $("<button class='close'>");
+                var modalImg = $("<img class='modal-img-top'>");
+                modalImg.attr("src", "https://media.giphy.com/media/GDqDZOPSZJC00/giphy.gif")
+
+                $("#modal1").html(modalID);
+                $("#myModal").css("display", "");
+                $("#myModal").html(modalDiv);
+                $(".modal-dialog").html(modalDiv2);
+                $(".modal-content").html(modalDiv3);
+                $(".modal-body").html(modalButton);
+                $(".modal-body").html(modalImg)
+
+            };
         });
     });
 });
 
+// <!-- <div id="myModal" class="modal fade" role="dialog">
+// <div class="modal-dialog">
+//     <div class="modal-content">
+//         <div class="modal-body">
+//         <button type="button" class="close" data-dismiss="modal">&times;</button>
+//         <img src="https://media.giphy.com/media/GDqDZOPSZJC00/giphy.gif">
+//         </div>
+//     </div>
+// </div>
+// </div> -->
 
 
 
