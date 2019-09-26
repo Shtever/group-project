@@ -59,7 +59,7 @@ p {
 }
 
 .button {
-	background: silver;
+	background: white;
 	padding: 10px;
 	color: black;
 	font-size: 16px;
@@ -70,15 +70,15 @@ p {
 	}
 
 .button:hover {
-	border-top-color: grey;
-	background: grey;
-	color:white;
+	border-top-color: white;
+	background: white;
+	color:black;
 	}
 
 .list-group-item {
 	border: none;
 	background-color: transparent;
-	color: white;
+	color: black;
 }
 
 .button:active {
@@ -93,8 +93,8 @@ p {
 }
 
 .card {
-	background-color: rgba(182, 230, 255, .5);
-	color: white;
+	background: linear-gradient(to bottom, rgb(255, 140, 233, .85), rgb(169, 167, 231, .85));
+	color: black;
 }
 
 #myModal {
