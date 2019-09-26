@@ -111,8 +111,8 @@ $(document).ready(function () {
                         $(cardText).text("Take Me There!");
                         $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
                         $(cardInfo).text("Type: " + randArray2.type);
-                        $(cardInfo).append("<br>Rating: " + randArray.rating + "/5");
-                        $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
+                        $(cardInfo).append("<br>Rating: " + randArray2.rating + "/5");
+                        $(cardInfo).append("<br>Avg cost for 2: $" + randArray2.cost);
                     };
                 };
                 $("#myModal").attr("style", "display:none");
