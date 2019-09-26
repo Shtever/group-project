@@ -115,7 +115,7 @@ $(document).ready(function () {
                         $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
                     };
                 };
-                        $("#myModal").attr("style", "display:none");
+                $("#myModal").attr("style", "display:none");
 
             }
             $(".btn").click(function (event) {
@@ -124,12 +124,9 @@ $(document).ready(function () {
                 count++;
                 console.log(count);
                 $(".btn").click(function () {
-                    if (count < 3) {
-                        $("#myModal").attr("style", "display:none");
-                        } else {
+                    if (count >= 3) {
                         count = 0;
                         modalShow();
-                        modalHide()
                     }
                 });
 
@@ -158,8 +155,7 @@ $(document).ready(function () {
                 $(".modal-body").html(modalImg)
             };
 
-            function modalHide(){
-                $("#myModal").attr("style", "display:none");
+            function modalHide() {
             }
         });
     });
