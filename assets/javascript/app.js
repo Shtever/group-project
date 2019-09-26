@@ -76,7 +76,7 @@ $(document).ready(function () {
                     $(cardImg).attr("src", randArray.image);
                     $(cardTitle).text(randArray.name);
                     $(cardText).text("Take Me There!");
-                    $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
+                    $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + randArray.address);
                     $(cardInfo).text("Type: " + randArray.type);
                     $(cardInfo).append("<br>Rating: " + randArray.rating + "/5");
                     $(cardInfo).append("<br>Avg cost for 2: $" + randArray.cost);
@@ -109,7 +109,7 @@ $(document).ready(function () {
                         $(cardImg).attr("src", randArray2.image);
                         $(cardTitle).text(randArray2.name);
                         $(cardText).text("Take Me There!");
-                        $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + placeObject.address);
+                        $(cardText).attr("href", "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + randArray2.address);
                         $(cardInfo).text("Type: " + randArray2.type);
                         $(cardInfo).append("<br>Rating: " + randArray2.rating + "/5");
                         $(cardInfo).append("<br>Avg cost for 2: $" + randArray2.cost);
